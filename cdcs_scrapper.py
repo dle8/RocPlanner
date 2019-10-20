@@ -1,7 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.common.by import By
 import time
 import sys
 
@@ -45,10 +45,14 @@ for term in terms[1:]:
             for course in courses:
                 rows = course.find_elements_by_xpath('.//tbody/tr')
                 for row in rows:
+                    if row.text.strip() is "":
+                        continue
                     cells = row.find_elements_by_xpath('.//td')
-                    for cell in cells:
-                        if isinstance(cell.text, str) and cell.text != "":
-                            print(cell.text.strip())
+                    print(' '.join([cell.text.strip() for cell in cells]))
+                    # for cell in cells:
+                    #     if isinstance(cell.text, str) and cell.text != "":
+                    #         print(cell.text.strip())
+                    print("///")
                 print('-------------')
             browser.close()
             sys.exit(0)
