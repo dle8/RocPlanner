@@ -118,7 +118,7 @@ import axios from 'axios'
 import Year from '@/components/Year.vue'
 import CourseItem from '@/components/CourseItem.vue'
 import { scroll } from 'quasar'
-const { getScrollTarget, setScrollPosition } = scroll
+const { getScrollTarget, setScrollPosition } = scroll;
 
 
 export default {
@@ -320,7 +320,7 @@ export default {
             let re = /[A-Z]{4}[0-9]{4}/g;
             if(res.data.enrol_conditions) {
               let target = getScrollTarget(document.getElementById('course-list'));
-              this.prereqs = res.data.enrol_conditions.match(re)
+              this.prereqs = res.data.enrol_conditions.match(re);
               setScrollPosition(target, 0, 500)
             }
             if(!res.data.enrol_conditions || !this.prereqs)
@@ -387,10 +387,10 @@ export default {
         return course.code.toLowerCase().includes(this.searchCourse.toLowerCase()) ||
           course.name.toLowerCase().includes(this.searchCourse.toLowerCase());
       }).slice(0, 10);
-	  let cores = []
-	  let premajors = []
-	  let electives = []
-	  let writings = []
+	  let cores = [];
+	  let premajors = [];
+	  let electives = [];
+	  let writings = [];
 	  if(this.major_core_courses)
         cores = this.all_courses
           .filter(course => this.major_core_courses.includes(course.code))
