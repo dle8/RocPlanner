@@ -1,0 +1,5 @@
+.idea
+chromedriver_linux64
+venv
+client/dist
+client/node_modules
