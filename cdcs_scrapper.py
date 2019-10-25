@@ -33,7 +33,7 @@ def return_one_elem(arr):
 
 
 with open('courses.json', 'w') as outfile:
-    for k in range(1, 3):
+    for k in range(1, 2):
         terms = browser.find_element_by_id('ddlTerm').find_elements_by_tag_name('option')
         term = terms[k]
         term.click()
@@ -54,6 +54,9 @@ with open('courses.json', 'w') as outfile:
                 # print(subject.text)
                 subject.click()
 
+                main_course = browser.find_element_by_id('ddlTypes').find_elements_by_tag_name('option')
+                main_course[1].click()
+
                 search = browser.find_element_by_id('btnSubmit')
                 search.click()
 
@@ -61,7 +64,7 @@ with open('courses.json', 'w') as outfile:
 
                 prev = 0
 
-                for course_id in range(100):
+                for course_id in range(10000):
                     course = {}
                     id = str(course_id)
                     if course_id < 10:
