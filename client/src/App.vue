@@ -156,15 +156,15 @@
                         name: 'Year 1',
                         semesters: [
                             {
-                                name: 'Fall Term',
+                                name: 'Fall',
                                 courses: []
                             },
                             {
-                                name: 'Spring Term',
+                                name: 'Spring',
                                 courses: []
                             },
                             {
-                                name: 'Summer Term',
+                                name: 'Summer',
                                 courses: []
                             },
                         ]
@@ -180,26 +180,8 @@
                 this.fingerIcon.style.setProperty("left", fingerX + "px");
             },
             clear() {
-                if (confirm("Are you sure to clear the existing plan")) {
+                if (confirm("Are you sure to clear the existing plan?")) {
                     this.years = [];
-                    this.years.push({
-                        name: 'Year 1',
-                        semesters: [
-                            {
-                                name: 'Fall Term',
-                                courses: []
-                            },
-                            {
-                                name: 'Spring Term',
-                                courses: []
-                            },
-                            {
-                                name: 'Summer Term',
-                                courses: []
-                            },
-                        ]
-                    });
-                    this.years[0].semesters[0].courses = [];
                 }
             },
             stripString: function (str, limit) {
@@ -213,15 +195,15 @@
                     name: 'Year ' + (this.years.length + 1),
                     semesters: [
                         {
-                            name: 'Fall Term',
+                            name: 'Fall',
                             courses: []
                         },
                         {
-                            name: 'Spring Term',
+                            name: 'Spring',
                             courses: []
                         },
                         {
-                            name: 'Summer Term',
+                            name: 'Summer',
                             courses: []
                         }
                     ]
@@ -234,9 +216,9 @@
                 let code = evt.item.querySelector('small').innerText.split(' - ')[0];
                 axios.get(`${this.$config.API_BASE}/course-detail/${code}`)
                     .then(res => {
-                        if (res.data.teaching_period_display)
+                        if (res.data.teaching_period)
                             this.dragging_course_periods =
-                                res.data.teaching_period_display.split(', ')
+                                res.data.teaching_period.split(' ')
                     });
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                     this.showLeft = false;
