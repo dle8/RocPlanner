@@ -58,7 +58,7 @@
                     <p>{{details.credit_points}}</p>
 
                     <p class="q-title">Term(s)</p>
-                    <p v-html="details.teaching_period_display"></p>
+                    <p v-html="details.teaching_period"></p>
 
                     <p v-if="details.prereq" class="q-title">Prerequisite Course(s)</p>
                     <p v-html="details.prereq"></p>
