@@ -35,7 +35,6 @@ def major_list():
 
 @app.route('/api/course-detail/<course_code>')
 def course_details(course_code):
-    print(courses[course_code])
     return jsonify(courses[course_code][0])
 
 
