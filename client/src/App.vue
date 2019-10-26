@@ -156,7 +156,6 @@ export default {
           semesters: [
             {
               name: 'Fall Term',
-			  credits : '0',
               courses: []              
             },
             {
@@ -359,7 +358,7 @@ export default {
         for (const semester of year.semesters) {
           for (const c of semester.courses) {
             if(c.credits)
-              result += parseInt(c.credits)
+              result += parseInt(c.credits);
           }
         }
       }

@@ -1,7 +1,7 @@
 <template>
   <q-card :color="highlight ? 'light' : ''" class="term-card">
     <q-card-title>
-      {{name}} - Credit Hours:
+      {{name}} - Credit Hours: {{creditSum}}
     </q-card-title>
     <q-card-separator />
     <q-card-main>
@@ -40,7 +40,7 @@ export default {
   name: 'Semester',
   props: [
     'value',
-    'name',    
+    'name',
     'group',
     'prereqs',
 	'premajors',
@@ -93,13 +93,22 @@ export default {
       this.$emit('input', this.courses, this.index)
     }
   },
+  computed: {
+    creditSum() {
+      let result = 0;
+        for (const c of this.courses) {
+            if(c.credits)
+              result += parseInt(c.credits);
+        }
+      return result;
+    }
+  },
   watch: {
     loaded_local_storage: {
       handler() {
         this.courses = this.value;
       }
     }
-  
-  }
+  } 
 }
 </script>
