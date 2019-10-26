@@ -264,14 +264,13 @@
                     axios
                         .get(`${this.$config.API_BASE}/course-detail/${code}`)
                         .then(res => {
-                            let re = /[A-Z]{3}\s[0-9]{3}/g;
+                            let re = /[A-Z]{2,3}\s[0-9]{2,3}[A-Z]?/g;
                             if (res.data.prereq) {
                                 let target = getScrollTarget(document.getElementById('course-list'));
                                 this.prereqs = res.data.prereq.match(re);
-                                setScrollPosition(target, 0, 500)
+                                setScrollPosition(target, 0, 500);
                             }
-                            if (!res.data.prereq || !this.prereqs)
-                                this.prereqs = [];
+                            if (!res.data.prereq || !this.prereqs) this.prereqs = [];
                         })
                 }, 500);
             },
