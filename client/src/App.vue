@@ -119,7 +119,7 @@
     import CourseItem from '@/components/CourseItem.vue'
     import {scroll} from 'quasar'
 
-    const {getScrollTarget, setScrollPosition} = scroll
+    const {getScrollTarget, setScrollPosition} = scroll;
 
 
     export default {
@@ -168,57 +168,6 @@
                                 courses: []
                             },
                         ]
-                    },
-                    {
-                        name: 'Year 2',
-                        semesters: [
-                            {
-                                name: 'Fall Term',
-                                courses: []
-                            },
-                            {
-                                name: 'Spring Term',
-                                courses: []
-                            },
-                            {
-                                name: 'Summer Term',
-                                courses: []
-                            }
-                        ]
-                    },
-                    {
-                        name: 'Year 3',
-                        semesters: [
-                            {
-                                name: 'Fall Term',
-                                courses: []
-                            },
-                            {
-                                name: 'Spring Term',
-                                courses: []
-                            },
-                            {
-                                name: 'Summer Term',
-                                courses: []
-                            }
-                        ]
-                    },
-                    {
-                        name: 'Year 4',
-                        semesters: [
-                            {
-                                name: 'Fall Term',
-                                courses: []
-                            },
-                            {
-                                name: 'Spring Term',
-                                courses: []
-                            },
-                            {
-                                name: 'Summer Term',
-                                courses: []
-                            }
-                        ]
                     }
                 ]
             }
@@ -233,6 +182,24 @@
             clear() {
                 if (confirm("Are you sure to clear the existing plan")) {
                     this.years = [];
+                    this.years.push({
+                        name: 'Year 1',
+                        semesters: [
+                            {
+                                name: 'Fall Term',
+                                courses: []
+                            },
+                            {
+                                name: 'Spring Term',
+                                courses: []
+                            },
+                            {
+                                name: 'Summer Term',
+                                courses: []
+                            },
+                        ]
+                    });
+                    this.years[0].semesters[0].courses = [];
                 }
             },
             stripString: function (str, limit) {
@@ -272,11 +239,7 @@
                                 res.data.teaching_period_display.split(', ')
                     });
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    // We are going to check if we are running a mobile system. If mobile,
-                    // hide the left drawer when dragging.
                     this.showLeft = false;
-                    // Since draggable is not implemented on mobile, we have to fake it on
-                    // the system.
                     if (!this.fingerIconOn) {
                         this.fingerIconOn = true;
                         this.fingerIcon.textContent = code;
@@ -287,7 +250,6 @@
             },
             stopDragging() {
                 this.dragging_course_periods = [];
-                // Hide the finger Icon we have dragged
                 if (this.fingerIconOn) {
                     this.fingerIconOn = false;
                     this.fingerIcon.hidden = true;
@@ -305,7 +267,7 @@
                             let re = /[A-Z]{3}\s[0-9]{3}/g;
                             if (res.data.prereq) {
                                 let target = getScrollTarget(document.getElementById('course-list'));
-                                this.prereqs = res.data.prereq.match(re)
+                                this.prereqs = res.data.prereq.match(re);
                                 setScrollPosition(target, 0, 500)
                             }
                             if (!res.data.prereq || !this.prereqs)
@@ -358,8 +320,7 @@
                 for (const year of this.years) {
                     for (const semester of year.semesters) {
                         for (const c of semester.courses) {
-                            if (c.credits)
-                                result += parseInt(c.credits);
+                            if (c.credits) result += parseInt(c.credits);
                         }
                     }
                 }
@@ -372,10 +333,10 @@
                     return course.code.toLowerCase().includes(this.searchCourse.toLowerCase()) ||
                         course.name.toLowerCase().includes(this.searchCourse.toLowerCase());
                 }).slice(0, 10);
-                let cores = []
-                let premajors = []
-                let electives = []
-                let writings = []
+                let cores = [];
+                let premajors = [];
+                let electives = [];
+                let writings = [];
                 if (this.major_core_courses)
                     cores = this.all_courses
                         .filter(course => this.major_core_courses.includes(course.code))
@@ -428,13 +389,9 @@
                                     break;
                                 }
                             }
-                            if (selected) {
-                                break;
-                            }
+                            if (selected) break;
                         }
-                        if (selected) {
-                            break;
-                        }
+                        if (selected) break;
                     }
                     return !selected;
                 });
