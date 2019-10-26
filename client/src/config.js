@@ -2,7 +2,7 @@ let config;
 
 if (process.env.NODE_ENV === "production") {
   config = {
-    API_BASE: "",
+    API_BASE: "https://uplanner.bopa.ng/api",
   };
 } else {
   config = {
