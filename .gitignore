@@ -1,5 +1,6 @@
 venv
 chromedriver_linux64
+chromedriver
 .idea
 client/dist
 client/node_modules
