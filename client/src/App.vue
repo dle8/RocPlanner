@@ -290,7 +290,17 @@
                 alert('Plan saved');
             },
             updateCourses(courses, semesterIndex, yearIndex) {
+                // let term = {
+                //   0: "Fall",
+                //   1: "Spring",
+                //   2: "Summer"
+                // };
                 this.years[yearIndex].semesters[semesterIndex].courses = courses;
+                // if (this.dragging_course_periods.indexOf(term[semesterIndex]) < 0) {
+                //     alert("This course is not offered in " + term[semesterIndex]);
+                // } else {
+                //     this.years[yearIndex].semesters[semesterIndex].courses = courses;
+                // }
             }
 
 
