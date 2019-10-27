@@ -7,7 +7,7 @@ url = 'https://cdcs.ur.rochester.edu/'
 option = webdriver.ChromeOptions()
 option.add_argument(' - incognito')
 browser = webdriver.Chrome(
-    executable_path='/home/dylan/Desktop/Github Repos/Course-Recommendation-Engine/chromedriver_linux64/chromedriver',
+    executable_path='/Users/dle8/Desktop/Course-Recommendation-Engine/chromedriver',
     options=option
 )
 browser.get('https://cdcs.ur.rochester.edu/')
@@ -32,8 +32,8 @@ def return_one_elem(arr):
     return ""
 
 
-with open('courses.json', 'w') as outfile:
-    for k in range(1, 2):
+with open('courses_fall.json', 'w') as outfile:
+    for k in range(2, 3):
         terms = browser.find_element_by_id('ddlTerm').find_elements_by_tag_name('option')
         term = terms[k]
         term.click()
