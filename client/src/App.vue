@@ -246,10 +246,20 @@
                     axios
                         .get(`${this.$config.API_BASE}/course-detail/${code}`)
                         .then(res => {
-                            let re = /[A-Z]{2,3}\s[0-9]{2,3}[A-Z]?/g;
+                            let re = /[A-Z]{2,3}\s?[0-9]{2,3}[A-Z]?/g;
                             if (res.data.prereq) {
                                 let target = getScrollTarget(document.getElementById('course-list'));
-                                this.prereqs = res.data.prereq.match(re);
+                                let prereqs = res.data.prereq.match(re);
+                                for (let i = 0; i < prereqs.length; i++){
+                                    for (let j = 0; j < prereqs[i].length; j++) {
+                                        if (prereqs[i][j] >= "0" && prereqs[i][j] <= "9") {
+                                            if (prereqs[i][j - 1] != ' ') prereqs[i] = prereqs[i].slice(0, j) + " " + prereqs[i].slice(j);
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                this.prereqs = prereqs;
                                 setScrollPosition(target, 0, 500);
                             }
                             if (!res.data.prereq || !this.prereqs) this.prereqs = [];
