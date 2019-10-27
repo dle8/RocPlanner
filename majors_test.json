@@ -1,0 +1,4 @@
+[
+	{"code": "CSC", "title": "Computer Science-BS", "core_courses": ["CSC 242"], "premajor_courses" : ["CSC 173"], "elective_courses" : ["CSC 254"],"writing_courses" : ["WRT 105"]},
+	{"code": "ECO", "title": "Economics", "core_courses":["ECO 108"],"premajor_courses" : ["ECO 207"], "elective_courses" : ["ECO 209"],"writing_courses" : ["WRT 105"]}
+]
