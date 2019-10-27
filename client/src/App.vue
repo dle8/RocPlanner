@@ -347,21 +347,21 @@
                         });
                 if (this.major_premajor_courses)
                     premajors = this.all_courses
-                        .filter(course => this.major_premajor_courses.includes(course.code))
+                        .filter(course => this.major_premajor_courses.includes(course.code) && !cores.includes(course.code))
                         .map(course => {
                             course.premajor = true;
                             return course
                         });
                 if (this.major_elective_courses)
                     electives = this.all_courses
-                        .filter(course => this.major_elective_courses.includes(course.code))
+                        .filter(course => this.major_elective_courses.includes(course.code) && !cores.includes(course.code) && !premajors.includes(course.code))
                         .map(course => {
                             course.elective = true;
                             return course
                         });
                 if (this.major_writing_courses)
                     writings = this.all_courses
-                        .filter(course => this.major_writing_courses.includes(course.code))
+                        .filter(course => this.major_writing_courses.includes(course.code) && !electives.includes(course.code) && !cores.includes(course.code) && !premajors.includes(course.code))
                         .map(course => {
                             course.writing = true;
                             return course
