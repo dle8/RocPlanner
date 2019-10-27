@@ -5,3 +5,7 @@ chromedriver
 client/dist
 client/node_modules
 app.py
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
