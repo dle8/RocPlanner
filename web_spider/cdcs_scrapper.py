@@ -32,7 +32,7 @@ def return_one_elem(arr):
     return ""
 
 
-with open('courses_fall.json', 'w') as outfile:
+with open('../courses_fall.json', 'w') as outfile:
     for k in range(2, 3):
         terms = browser.find_element_by_id('ddlTerm').find_elements_by_tag_name('option')
         term = terms[k]
