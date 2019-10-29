@@ -22290,7 +22290,7 @@
       "name": "COMPUTATION & FORMAL SYSTEMS",
       "prereq": "CSC 172",
       "credit_points": "4.0",
-      "teaching_period": "Spring",
+      "teaching_period": "Fall Spring",
       "clusters": "N1CSC008, N4CSC001, N4CSC004",
       "description": "Investigation of several formal systems influential in computer science, and also some of their applications (e.g. inspiring and providing the foundation for a computer programming style, or providing the basis for solving important practical problems like communications protocols, compiling, systems analysis, graphics ...) This course is available to majors only during the registration period."
     }
@@ -22458,7 +22458,7 @@
       "name": "ARTIFICIAL INTELLIGENCE",
       "prereq": "Prerequisites: MTH 150 and CSC 172. CSC 173 STRONGLY recommended.",
       "credit_points": "4.0",
-      "teaching_period": "Spring",
+      "teaching_period": "Fall Spring",
       "clusters": "",
       "description": "Introduces fundamental principles and techniques from Artificial Intelligence, including heuristic search, automated reasoning, handling uncertainty, and machine learning, to prepare students for advanced AI courses. This course is available to majors only during the registration period."
     }
