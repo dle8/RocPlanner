@@ -7,8 +7,8 @@ application = Flask(__name__, static_url_path='/static')
 
 CORS(application)
 
-courses = json.load(open('courses.json'))
-majors = json.load(open('majors.json'))
+courses = json.load(open('dataset/courses.json'))
+majors = json.load(open('dataset/majors.json'))
 
 
 @application.route('/api/course-list')
