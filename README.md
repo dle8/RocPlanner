@@ -54,7 +54,12 @@ $ npm run serve
 
 ## Authors:
 [Dung Le](https://github.com/dle8)
+Computer Science major.
+University of Rochester '21.
+
 [Hoang Le](https://github.com/Soos99)
+Computer Science and Data Science major.
+University of Rochester '22.
 
 ## Contacts:
 Feel free to contact [me](dle8@u.rochester.edu) or [Hoang Le](hle7@u.rochester.edu) with any questions, comments,
