@@ -53,11 +53,11 @@ $ npm run serve
 - Course recommendation engine using topological sorting and [AWS Personalize](https://aws.amazon.com/personalize/)
 
 ## Authors:
-- [Dung Le](https://github.com/dle8) . 
+- [Dung Le](https://github.com/dle8) <br/>
 Computer Science major.  
 University of Rochester '21.  
 
-- [Hoang Le](https://github.com/Soos99) . 
+- [Hoang Le](https://github.com/Soos99) <br/>
 Computer Science and Data Science major.  
 University of Rochester '22.  
 
