@@ -2,8 +2,12 @@ from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from models.user import UserModel
 from forms.forms import LoginForm, RegisterForm
+from werkzeug.security import generate_password_hash, check_password_hash
+from server import db
 import os
+import random
 
 import json
 
@@ -43,6 +47,38 @@ def authenticate():
         return jsonify('ok')
 
     return render_template('login.html', form=form)
+
+
+@application.route('/users', methods=['POST', 'GET'])
+def register():
+    form = RegisterForm()
+    if form.validate_on_submit():
+        email = form.email.data
+        form.email.data = None
+        password = form.password.data
+        form.password.data = None
+        class_year = form.class_year.data
+        form.class_year.data = None
+
+        user = UserModel.query.filter_by(email=email).one_or_none()
+        if user:  # email already in used by another user
+            pass
+        hashed_password = generate_password_hash(password=password)
+        user = UserModel(email=email, hashed_password=hashed_password, class_year=class_year)
+        db.session.add(user)
+        try:
+            db.session.commit()
+        except Exception as e:
+            print(e)
+
+        send_user_confirmation_code(name=name, email=email)
+
+        return jsonify(message='Account confirmation email sent'), 201
+
+
+def send_user_confirmation_code(name=None, email=None):
+    confirmation_code = random.randrange(100000, 999999)
+    pass
 
 
 @application.route('/users', methods=['POST'])
