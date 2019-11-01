@@ -1,17 +1,10 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask
 from flask_cors import CORS
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
-from models.user import UserModel
-from forms.forms import LoginForm, RegisterForm
-from werkzeug.security import generate_password_hash, check_password_hash
 from celery import Celery
 from config import config
 from flask_mail import Mail
-import os
-import random
-
-import json
 
 application = Flask(__name__, template_folder='../templates', static_url_path='', static_folder='../static')
 application.config.from_object(config)
