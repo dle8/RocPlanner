@@ -10,3 +10,6 @@ class MajorModel(db.Model):
     core = db.Column(db.Text())
     elective = db.Column(db.Text())
     writing = db.Column(db.Text())
+
+    def __init__(self, *args, **kwargs):
+        super(MajorModel, self).__init__(*args, **kwargs)

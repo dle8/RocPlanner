@@ -12,3 +12,6 @@ class UserModel(db.Model):
 
     confirmed = db.Column(db.Boolean, nullable=False, default=False)
     confirmation_code = db.Column(db.Integer)
+
+    def __init__(self, *args, **kwargs):
+        super(UserModel, self).__init__(*args, **kwargs)

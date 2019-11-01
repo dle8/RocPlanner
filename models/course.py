@@ -11,3 +11,6 @@ class CourseModel(db.Model):
     prerequisite = db.Column(db.String(1024))
     description = db.Column(db.Text())
     cluster = db.Column(db.String(512))
+
+    def __init__(self, *args, **kwargs):
+        super(CourseModel, self).__init__(*args, **kwargs)
