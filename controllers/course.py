@@ -1,4 +1,5 @@
-from server import application, jsonify
+from server import application
+from flask import jsonify
 import json
 import os
 

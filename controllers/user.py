@@ -49,11 +49,6 @@ def register():
         return jsonify(message='Account confirmation email sent'), 201
 
 
-@application.route('/users', methods=['POST'])
-def register():
-    return jsonify('ok')
-
-
 def send_user_confirmation_code(name=None, email=None):
     user = UserModel.query.filter_by(email=email).one_or_none()
     user.confirmation_code = random.randrange(100000, 999999)
