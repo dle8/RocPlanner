@@ -58,7 +58,7 @@ Computer Science major.
 University of Rochester '21.  
 
 - [Hoang Le](https://github.com/Soos99) <br/>
-Computer Science and Data Science major.  
+Computer Science major.  
 University of Rochester '22.  
 
 ## Contacts:
