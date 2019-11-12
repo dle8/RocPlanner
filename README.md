@@ -5,7 +5,7 @@ projects assists University of Rochester students to plan and organize their cou
 ## Supported features
 - Majors searching, courses dragging
 - Chatbot to pick courses with daily languages (in development)
-- Course recommendation engine(in development)
+- Course recommendation engine (in development)
 
 ## Technologies used
 - [Python](https://www.python.org/) 
@@ -14,7 +14,7 @@ projects assists University of Rochester students to plan and organize their cou
 - [Vue js](https://vuejs.org/)
 - [Selenium](https://www.seleniumhq.org/)
 - [Amazon Web Services RDS](https://aws.amazon.com/rds/)
-- [Google Cloud](https://cloud.google.com/)
+- [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
 
 ## Setup
 1. Install [Node.js + npm](https://www.npmjs.com/get-npm) on your machine
