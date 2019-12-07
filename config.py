@@ -13,11 +13,12 @@ class Config(object):
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = ''
-    MAIL_PASSWORD = ''
-    MAIL_DEFAULT_SENDER = 'letuandung492@gmail.com'
-
+    MAIL_USERNAME = 'rocplanner@gmail.com'
+    MAIL_PASSWORD = 'zubwsajlkepnxpoj'
+    MAIL_DEFAULT_SENDER = 'rocplanner@gmail.com'
+    # zubwsajlkepnxpoj
     # Flask
+    MAIL_APP_PASSWORDs = 'zubwsajlkepnxpoj'
     SECRET_KEY = 'secret'
 
 

@@ -5,9 +5,12 @@ from flask_sqlalchemy import SQLAlchemy
 from celery import Celery
 from config import config
 from flask_mail import Mail
+from flask_wtf.csrf import CSRFProtect
 
 application = Flask(__name__, template_folder='../templates', static_url_path='', static_folder='../static')
 application.config.from_object(config)
+
+csrf = CSRFProtect(application)
 
 # Initialize Flask Login Manager
 login_manager = LoginManager()
