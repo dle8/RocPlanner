@@ -2,11 +2,11 @@ let config;
 
 if (process.env.NODE_ENV === "production") {
   config = {
-    API_BASE: "https://uplanner.bopa.ng/api",
+    API_BASE: "",
   };
 } else {
   config = {
-    API_BASE: "https://rocplanning.herokuapp.com/api",
+    API_BASE: "http://localhost:5000/api",
   };
 }
 

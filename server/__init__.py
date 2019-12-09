@@ -14,7 +14,7 @@ csrf = CSRFProtect(application)
 
 # Initialize Flask Login Manager
 login_manager = LoginManager()
-login_manager.login_view = 'login'
+login_manager.login_view = 'home'
 login_manager.init_app(application)
 
 # Initialize Flask Cors

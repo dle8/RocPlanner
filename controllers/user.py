@@ -18,7 +18,7 @@ def load_user(user_id):
 @application.route('/')
 def home():
     if current_user.is_authenticated:
-        return redirect("http://rocplanning.s3-website.us-east-2.amazonaws.com/")
+        return redirect("http://localhost:8080")
     return redirect(url_for('authenticate'))
 
 
@@ -52,7 +52,6 @@ def authenticate():
 @application.route('/confirmation_codes', methods=['POST'])
 def validate_confirmation_code():
     data = request.form.to_dict()
-    print(data)
     user = UserModel.query.filter_by(id=data.get('user_id')).one_or_none()
     if not user or user.confirmation_code != data['confirmation_code']:
         return jsonify({"message": "Verification failed"}), 401
@@ -102,7 +101,7 @@ def reset_password():
         new_password = form.new_password.data
         form.new_password.data = None
         new_password_confirm = form.new_password_confirm.data
-        form.new_password_confirm.data = None
+        form.new_password_confirm.data = Nonere
 
     pass
 

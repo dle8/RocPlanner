@@ -10,6 +10,12 @@
                 <q-toolbar-title>
                     ROCplanner
                 </q-toolbar-title>
+                <q-btn @click="logout()"
+                       color='deep-purple-10'
+                       class="float-right"
+                       label="Logout"
+                       style="margin-right: 5px"
+                />
                 <img src="UR.ico"/>
             </q-toolbar>
         </q-layout-header>
@@ -298,6 +304,10 @@
                 localStorage.setItem('years', parsed);
                 localStorage.setItem('major', this.major_search_string);
                 alert('Plan saved');
+            },
+            logout() {
+                axios.get('http://localhost:5000/logout');
+                window.location('/');
             },
             updateCourses(courses, semesterIndex, yearIndex) {
                 // let term = {
