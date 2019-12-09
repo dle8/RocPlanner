@@ -8,7 +8,6 @@ majors = json.load(open(os.path.abspath('') + '/dataset/majors.json'))
 
 
 @application.route('/api/major-list')
-@login_required
 def major_list():
     return jsonify([{
         'name': major['title'],
@@ -19,7 +18,6 @@ def major_list():
 
 
 @application.route('/api/major-detail/<major_code>')
-@login_required
 def major_details(major_code):
     return jsonify([
                        major
