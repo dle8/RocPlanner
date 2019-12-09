@@ -10,7 +10,8 @@
                 <q-toolbar-title>
                     ROCplanner
                 </q-toolbar-title>
-                <q-btn @click="logout()"
+                <q-btn type ="a"
+                       href="http://127.0.0.1:5000/logout"
                        color='deep-purple-10'
                        class="float-right"
                        label="Logout"

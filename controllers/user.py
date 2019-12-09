@@ -62,7 +62,6 @@ def authenticate():
             return redirect(url_for('authenticate'))
 
         login_user(user, remember=remember_me)
-        flash('Success!')
         return redirect(url_for('hidden'))
 
     return render_template('template.html', form=form, login=True, register=False, confirmation_code=False)
