@@ -2,7 +2,8 @@ class Config(object):
     DEBUG = False
 
     # SQL Alchemy
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:Adu230999@localhost:3306/rocplanner'
+    SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
+    #SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://administrator:Aa!1998123@localhost:3306/rocplanner'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Celery
