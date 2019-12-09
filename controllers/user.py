@@ -14,12 +14,14 @@ import random
 def load_user(user_id):
     return UserModel.query.get(int(user_id))
 
+
 @application.route('/hidden')
 def hidden():
     if current_user.is_authenticated:
-        #return redirect("http://rocplanning.s3-website.us-east-2.amazonaws.com/")
-        return redirect("http://localhost:8080")
+        # return redirect("http://rocplanning.s3-website.us-east-2.amazonaws.com/")
+        return redirect("http://localhost:8080/")
     return redirect(url_for('home'))
+
 
 @application.route('/')
 def home():
@@ -38,16 +40,15 @@ def authenticate():
         password = form.password.data
         form.password.data = None
 
-        if (len(password)<6 or len(password)>15):
+        if (len(password) < 6 or len(password) > 15):
             flash('Password length must be between 6 and 15!')
             return redirect(url_for('authenticate'))
-
 
         user = UserModel.query.filter_by(email=email).one_or_none()
         if not user:
             flash('Email not existed. Please try again or register first!')
-            #form = LoginForm()
-            #return render_template('template.html', form=form, login=True, register=False, confirmation_code=False)
+            # form = LoginForm()
+            # return render_template('template.html', form=form, login=True, register=False, confirmation_code=False)
             return redirect(url_for('authenticate'))
 
         if not user.confirmed:
@@ -56,8 +57,8 @@ def authenticate():
 
         if not check_password_hash(password=password, pwhash=user.hashed_password):
             flash('Invalid email or password. Please try again!')
-            #form = LoginForm()
-            #return render_template('template.html', form=form)
+            # form = LoginForm()
+            # return render_template('template.html', form=form)
             return redirect(url_for('authenticate'))
 
         login_user(user, remember=remember_me)
@@ -67,14 +68,14 @@ def authenticate():
     return render_template('template.html', form=form, login=True, register=False, confirmation_code=False)
 
 
-@application.route('/confirmation_codes', methods=['GET','POST'])
+@application.route('/confirmation_codes', methods=['GET', 'POST'])
 def validate_confirmation_code():
     ##data = request.form.to_dict()
-    #print(data)
-    #user = UserModel.query.filter_by(id=data.get('user_id')).one_or_none()
-    #if not user or user.confirmation_code != data['confirmation_code']:
+    # print(data)
+    # user = UserModel.query.filter_by(id=data.get('user_id')).one_or_none()
+    # if not user or user.confirmation_code != data['confirmation_code']:
     #    return jsonify({"message": "Verification failed"}), 401
-    #return jsonify({"message": "Verification succeeded"}), 200
+    # return jsonify({"message": "Verification succeeded"}), 200
     form = ConfirmationForm()
     if form.validate_on_submit():
         email = form.email.data
@@ -101,7 +102,6 @@ def validate_confirmation_code():
     return render_template('template.html', form=form, register=False, confirmation_code=True, login=False)
 
 
-
 @application.route('/users', methods=['POST', 'GET'])
 def register():
     form = RegisterForm()
@@ -115,11 +115,11 @@ def register():
         class_year = form.class_year.data
         form.class_year.data = None
 
-        if (class_year<2019 or class_year>2023):
+        if (class_year < 2019 or class_year > 2023):
             flash('Class year must be between 2019 and 2023!')
             return redirect(url_for('register'))
 
-        if (len(password)<6 or len(password)>15):
+        if (len(password) < 6 or len(password) > 15):
             flash('Password length must be between 6 and 15!')
             return redirect(url_for('register'))
 
@@ -139,9 +139,8 @@ def register():
         send_user_confirmation_code(name=name, email=email)
 
         flash('Account registered! Please check your email for confirmation code!')
-        #return redirect(url_for('authenticate'))
+        # return redirect(url_for('authenticate'))
         return redirect(url_for('validate_confirmation_code'))
-
 
     return render_template('template.html', form=form, register=True, confirmation_code=False, login=False)
 
@@ -156,11 +155,11 @@ def forget_password():
         if not user:
             flash('Email not existed. Please try again or register first!')
             return redirect(url_for('forget_password'))
-        else :
+        else:
             send_user_confirmation_code(name=user.name, email=email)
             return redirect(url_for('reset_password'))
 
-    return render_template('template.html',form=form, forget_password=True, confirmation_code=False, login=False)
+    return render_template('template.html', form=form, forget_password=True, confirmation_code=False, login=False)
 
 
 @application.route('/reset', methods=["GET", 'POST'])
@@ -180,10 +179,10 @@ def reset_password():
         if not user:
             flash('Email not existed.')
             return redirect(url_for('reset_password'))
-        if (new_password!=new_password_confirm):
+        if (new_password != new_password_confirm):
             flash('Passwords not match!')
             return redirect(url_for('reset_password'))
-        if (len(new_password)<6 or len(new_password)>15):
+        if (len(new_password) < 6 or len(new_password) > 15):
             flash('Passwords length must be between 6 and 15!')
             return redirect(url_for('reset_password'))
         else:
@@ -201,10 +200,7 @@ def reset_password():
             else:
                 flash('Incorrect Code or Email!')
 
-
-
-    return render_template('template.html',form=form, reset_password=True, confirmation_code=False, login=False)
-
+    return render_template('template.html', form=form, reset_password=True, confirmation_code=False, login=False)
 
 
 def send_user_confirmation_code(name=None, email=None):
