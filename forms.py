@@ -35,10 +35,12 @@ class RegisterForm(FlaskForm):
         validators=[DataRequired(blank_field)])
     submit = SubmitField('submit')
 
+
 class ConfirmationForm(FlaskForm):
     email = StringField('email', validators=[DataRequired(blank_field), Email(incorrect_form_email)])
     confirmation_code = StringField('confirmation_code', validators=[DataRequired(message=blank_field)])
     submit = SubmitField('submit')
+
 
 class ForgetPasswordForm(FlaskForm):
     email = StringField('email', validators=[DataRequired(blank_field), Email(incorrect_form_email)])
@@ -46,7 +48,7 @@ class ForgetPasswordForm(FlaskForm):
 
 
 class ResetPasswordForm(FlaskForm):
-    #temporary_password = StringField('temporary_password', validators=[DataRequired(message=blank_field)])
+    # temporary_password = StringField('temporary_password', validators=[DataRequired(message=blank_field)])
     email = StringField('email', validators=[DataRequired(blank_field), Email(incorrect_form_email)])
     confirmation_code = StringField('confirmation_code', validators=[DataRequired(message=blank_field)])
     new_password = PasswordField(

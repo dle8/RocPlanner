@@ -4,8 +4,6 @@ projects assists University of Rochester students to plan and organize their cou
 
 ## Supported features
 - Majors searching, courses dragging
-- Chatbot to pick courses with daily languages (in development)
-- Course recommendation engine(in development)
 
 ## Technologies used
 - [Python](https://www.python.org/) 
@@ -13,8 +11,8 @@ projects assists University of Rochester students to plan and organize their cou
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [Vue js](https://vuejs.org/)
 - [Selenium](https://www.seleniumhq.org/)
-- [Amazon Web Services RDS](https://aws.amazon.com/rds/)
-- [Google Cloud](https://cloud.google.com/)
+- [Amazon Web Services S3](https://aws.amazon.com/s3/)
+
 
 ## Setup
 1. Install [Node.js + npm](https://www.npmjs.com/get-npm) on your machine
@@ -49,17 +47,8 @@ $ npm run serve
 ```
 
 ## Todo:
-- Use [Google Cloud Api](https://cloud.google.com/natural-language/) to implement chatbot
 - Course recommendation engine using topological sorting and [AWS Personalize](https://aws.amazon.com/personalize/)
 
-## Authors:
-- [Dung Le](https://github.com/dle8) <br/>
-Computer Science major.  
-University of Rochester '21.  
-
-- [Hoang Le](https://github.com/Soos99) <br/>
-Computer Science major.  
-University of Rochester '22.  
 
 ## Contacts:
 Feel free to contact [me](dle8@u.rochester.edu) or [Hoang Le](hle7@u.rochester.edu) with any questions, comments,
