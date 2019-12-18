@@ -13,8 +13,8 @@ projects assists University of Rochester students to plan and organize their cou
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [Vue js](https://vuejs.org/)
 - [Selenium](https://www.seleniumhq.org/)
-- [Amazon Web Services RDS](https://aws.amazon.com/rds/)
-- [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
+- [Amazon EC2](https://aws.amazon.com/ec2/)
+- [Heroku](https://www.heroku.com/)
 
 ## Setup
 1. Install [Node.js + npm](https://www.npmjs.com/get-npm) on your machine
