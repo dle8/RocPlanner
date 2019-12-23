@@ -4,11 +4,8 @@ projects assists University of Rochester students to plan and organize their cou
 
 ## Supported features
 - Majors searching, courses dragging
-<<<<<<< HEAD
-=======
 - Chatbot to pick courses with daily languages (in development)
 - Course recommendation engine (in development)
->>>>>>> 279356486f9c46bc2f0871ca0f31af7c6f086c5d
 
 ## Technologies used
 - [Python](https://www.python.org/) 
