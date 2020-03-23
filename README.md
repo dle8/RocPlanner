@@ -37,7 +37,7 @@ $ pip install -r requirements.txt
 
 ## Run locally (default port 5000)
 ```
-$ python application.py
+$ python main.py
 ```
 
 2. In other terminal, run the Node.js application
@@ -47,7 +47,7 @@ $ npm run serve
 ```
 
 ## Todo:
-- Course recommendation engine using topological sorting and [AWS Personalize](https://aws.amazon.com/personalize/)
+- Course recommendation engine using topological sorting and [Google Recommendations AI](https://cloud.google.com/recommendations)
 
 
 ## Contacts:
