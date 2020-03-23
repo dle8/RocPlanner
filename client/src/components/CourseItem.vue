@@ -8,15 +8,15 @@
             @mouseover.native="hover()"
             @mouseleave.native="stopHover()"
     >
-        <q-chip dense v-if="premajors.includes(course.code)" color="warning">
+        <q-chip dense v-if="premajors.includes(course.code)" color="red-4">
             Premajor
         </q-chip>
 
-        <q-chip dense v-if="cores.includes(course.code)" color="primary">
+        <q-chip dense v-if="cores.includes(course.code)" color="blue-5">
             Core
         </q-chip>
 
-        <q-chip dense v-if="electives.includes(course.code)" color="tertiary">
+        <q-chip dense v-if="electives.includes(course.code)" color="green-4">
             Elective
         </q-chip>
 
@@ -24,7 +24,7 @@
             Prerequisite
         </q-chip>
 
-        <q-chip dense v-if="writings.includes(course.code)" color="secondary">
+        <q-chip dense v-if="writings.includes(course.code)" color="purple-4">
             Writing
         </q-chip>
         <q-item-main style="margin-left: 3px">
