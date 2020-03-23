@@ -6,8 +6,7 @@
 # Tech stacks
 
 ## Front-end
-1. React
-2. Redux
+1. VueJS
 
 ## Backend
 1. Python
