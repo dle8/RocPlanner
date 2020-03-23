@@ -10,13 +10,6 @@
                 <q-toolbar-title>
                     ROCplanner
                 </q-toolbar-title>
-                <q-btn type ="a"
-                       href="http://127.0.0.1:5000/logout"
-                       color='deep-purple-10'
-                       class="float-right"
-                       label="Logout"
-                       style="margin-right: 5px"
-                />
                 <img src="UR.ico"/>
             </q-toolbar>
         </q-layout-header>
@@ -306,10 +299,6 @@
                 localStorage.setItem('major', this.major_search_string);
                 alert('Plan saved');
             },
-            logout() {
-                axios.get('http://localhost:5000/logout');
-                window.location('/');
-            },
             updateCourses(courses, semesterIndex, yearIndex) {
                 // let term = {
                 //   0: "Fall",
@@ -349,18 +338,18 @@
                 let premajors = [];
                 let electives = [];
                 let writings = [];
-                if (this.major_core_courses)
-                    cores = this.all_courses
-                        .filter(course => this.major_core_courses.includes(course.code))
-                        .map(course => {
-                            course.core = true;
-                            return course
-                        });
                 if (this.major_premajor_courses)
                     premajors = this.all_courses
-                        .filter(course => this.major_premajor_courses.includes(course.code) && !cores.includes(course.code))
+                        .filter(course => this.major_premajor_courses.includes(course.code))
                         .map(course => {
                             course.premajor = true;
+                            return course
+                        });
+                if (this.major_core_courses)
+                    cores = this.all_courses
+                        .filter(course => this.major_core_courses.includes(course.code) && !premajors.includes(course.code))
+                        .map(course => {
+                            course.core = true;
                             return course
                         });
                 if (this.major_elective_courses)
