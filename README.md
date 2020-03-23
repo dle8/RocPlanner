@@ -3,18 +3,16 @@ RocPlanner is a website that help students pick the right courses and extract th
 projects assists University of Rochester students to plan and organize their coursework wisely over 4 years of college. 
 
 ## Supported features
-- Majors searching, courses dragging
-- Chatbot to pick courses with daily languages (in development)
-- Course recommendation engine (in development)
+- Majors/Courses Searching, College Study Scheduling
+- Course Recommendation Engine (in development)
 
 ## Technologies used
 - [Python](https://www.python.org/) 
 - [Flask](http://flask.palletsprojects.com/en/1.1.x/)
-- [SQLAlchemy](https://www.sqlalchemy.org/)
-- [Vue js](https://vuejs.org/)
-- [Selenium](https://www.seleniumhq.org/)
-- [Amazon Web Services S3](https://aws.amazon.com/s3/)
-- [Heroku](https://www.heroku.com/)
+- [Node.js](https://nodejs.org/en/)
+- [Vue.js](https://vuejs.org/)
+- [Google App Engine](https://cloud.google.com/appengine)
+- [Google Cloud Storage](https://cloud.google.com/products/storage)
 
 ## Setup
 1. Install [Node.js + npm](https://www.npmjs.com/get-npm) on your machine
@@ -42,7 +40,7 @@ $ pip install -r requirements.txt
 $ python application.py
 ```
 
-2. In other terminal, run the the Node.js application
+2. In other terminal, run the Node.js application
 ```
 $ cd client
 $ npm run serve
