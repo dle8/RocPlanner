@@ -1,6 +1,7 @@
 # RocPlanner
 RocPlanner is a website that help students pick the right courses and extract the most out of academic courses. This 
 projects assists University of Rochester students to plan and organize their coursework wisely over 4 years of college. 
+### Online Web Application: https://rocplanner-007.appspot.com/
 
 ## Supported features
 - Majors/Courses Searching, College Study Scheduling
