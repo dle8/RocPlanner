@@ -4,5 +4,6 @@ chromedriver
 .idea
 client/dist
 client/node_modules
-app.py
 templates/.DS_Store
+app.yaml
+
