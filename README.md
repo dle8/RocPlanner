@@ -4,7 +4,7 @@ projects assists University of Rochester students to plan and organize their cou
 #### Website URL: https://rocplanner-007.appspot.com/
 
 ## Supported features
-- Majors/Courses Searching, College Study Scheduling
+- Majors/Courses Searching, College Study Planning
 - Course Recommendation Engine (in development)
 
 ## Technologies used
