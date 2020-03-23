@@ -6,4 +6,4 @@ client/dist
 client/node_modules
 templates/.DS_Store
 app.yaml
-
+client/src/app.yaml
