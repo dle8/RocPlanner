@@ -1,7 +1,7 @@
 # RocPlanner
 RocPlanner is a course-planner website that assists University of Rochester students in planning out their 4-year college academic plan.
 
-#### Website URL: https://rocplanner-007.appspot.com/
+#### Website URL: https://rocplanner.herokuapp.com/
 
 ## Supported features
 - Majors/Courses Searching, College Study Planning
@@ -12,11 +12,10 @@ RocPlanner is a course-planner website that assists University of Rochester stud
 - [Flask](http://flask.palletsprojects.com/en/1.1.x/)
 - [Node.js](https://nodejs.org/en/)
 - [Vue.js](https://vuejs.org/)
-- [Google App Engine](https://cloud.google.com/appengine)
-- [Google Cloud Storage](https://cloud.google.com/products/storage)
-
+- [MongoDB](https://www.mongodb.com/)
+- [Heroku](https://www.heroku.com/)
 ## Setup
-1. Install [Node.js + npm](https://www.npmjs.com/get-npm) on your machine
+1. Install [Node.js + npm](https://www.npmjs.com/get-npm) and [MongoDB](https://docs.mongodb.com/manual/installation/) on your machine
 
 2. Clone this repository on your local machine
 ```
